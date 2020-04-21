@@ -9,27 +9,53 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/mycss.css">
 
     <title>Mes Volets</title>
   </head>
   <body>
-    <center><h2>Gestion des volets</h2></center>
-    <div class="container">
+    <center><h2>Pilotage des volets</h2>
+    <table class="table table-striped" style="width: 80%">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 10%">#</th>
+          <th scope="col" style="width: 50%">Description</th>
+          <th scope="col" style="width: 35%"></th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr>
+                <td>*</td>
+                <td>Tous les volets</td>
+                <td>
+                    <button type="button" class="btn btn-light" aria-label="open"><span class="fas fa-chevron-up"></span></button>
+                    <button type="button" class="btn btn-dark" aria-label="close"><span class="fas fa-chevron-down" aria-hidden="true"></span></button></td>
+            </tr>
         {% for shutter in shutters %}
-            {% if (loop.index - 1) % 4  == 0 %}
-                <div class="row">
-            {% endif %}
-            <div id="{{ shutter.id }}" class="col">{{ shutter.name }}
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success" aria-label="open"><span class="fas fa-chevron-up"></span></button>
-                    <button type="button" class="btn btn-danger" aria-label="close"><span class="fas fa-chevron-down" aria-hidden="true"></span></button>
-                </div>
-            </div>
-            {% if (loop.index - 1) % 4 == 3 %}
-                </div>
+            {% if shutter.group %}
+                <tr id="{{ shutter.id }}">
+                    <td>g</td>
+                    <td>{{ shutter.group_name }}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" aria-label="open"><span class="fas fa-chevron-up"></span></button>
+                        <button type="button" class="btn btn-secondary" aria-label="close"><span class="fas fa-chevron-down" aria-hidden="true"></span></button>
+                    </td>
+                </tr>
             {% endif %}
         {% endfor %}
-    </div>
+        {% for shutter in shutters %}
+            <tr id="{{ shutter.id }}">
+                <td>{{ shutter.id }}</td>
+                <td>{{ shutter.name }}</td>
+                <td>
+                    <button type="button" class="btn btn-success" aria-label="open"><span class="fas fa-chevron-up"></span></button>
+                    <button type="button" class="btn btn-danger" aria-label="close"><span class="fas fa-chevron-down" aria-hidden="true"></span></button>
+                </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </center>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="/static/jquery.min.js"></script>

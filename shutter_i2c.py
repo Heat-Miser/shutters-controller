@@ -13,22 +13,22 @@ class ShuttersController:
     mcp1 = None
 
     shutters = [
-        {"name": "shutter 1", "id": 1, "pin_up": 1, "pin_down": 0, "group": False},
-        {"name": "shutter 2", "id": 2, "pin_up": 3, "pin_down": 2, "group": False},
-        {"name": "shutter 3", "id": 3, "pin_up": 5, "pin_down": 4, "group": False},
-        {"name": "shutter 4", "id": 4, "pin_up": 7, "pin_down": 6, "group": False},
-        {"name": "shutter 5", "id": 5, "pin_up": 9, "pin_down": 8, "group": True},
-        {"name": "shutter 6", "id": 6, "pin_up": 11, "pin_down": 10, "group": False},
-        {"name": "shutter 7", "id": 7, "pin_up": 13, "pin_down": 12, "group": False},
-        {"name": "shutter 8", "id": 8, "pin_up": 15, "pin_down": 14, "group": False},
-        {"name": "shutter 9", "id": 9, "pin_up": 17, "pin_down": 16, "group": False},
-        {"name": "shutter 10", "id": 10, "pin_up": 19, "pin_down": 18, "group": False},
-        {"name": "shutter 11", "id": 11, "pin_up": 21, "pin_down": 20, "group": False},
-        {"name": "shutter 12", "id": 12, "pin_up": 23, "pin_down": 22, "group": False},
-        {"name": "shutter 13", "id": 13, "pin_up": 25, "pin_down": 24, "group": False},
-        {"name": "shutter 14", "id": 14, "pin_up": 27, "pin_down": 26, "group": False},
-        {"name": "shutter 15", "id": 15, "pin_up": 29, "pin_down": 28, "group": False},
-        {"name": "shutter 16", "id": 16, "pin_up": 31, "pin_down": 30, "group": False},
+        {"name": "Volet 1", "id": 1, "pin_up": 1, "pin_down": 0, "group": False},
+        {"name": "Volet 2", "id": 2, "pin_up": 3, "pin_down": 2, "group": False},
+        {"name": "Volet 3", "id": 3, "pin_up": 5, "pin_down": 4, "group": False},
+        {"name": "Volet 4", "id": 4, "pin_up": 7, "pin_down": 6, "group": False},
+        {"name": "Volet 5", "id": 5, "pin_up": 9, "pin_down": 8, "group": True, "group_name": "Group 1"},
+        {"name": "Volet 6", "id": 6, "pin_up": 11, "pin_down": 10, "group": False},
+        {"name": "Volet 7", "id": 7, "pin_up": 13, "pin_down": 12, "group": False},
+        {"name": "Volet 8", "id": 8, "pin_up": 15, "pin_down": 14, "group": False},
+        {"name": "Volet 9", "id": 9, "pin_up": 17, "pin_down": 16, "group": True, "group_name": "Group 2"},
+        {"name": "Volet 10", "id": 10, "pin_up": 19, "pin_down": 18, "group": False},
+        {"name": "Volet 11", "id": 11, "pin_up": 21, "pin_down": 20, "group": False},
+        {"name": "Volet 12", "id": 12, "pin_up": 23, "pin_down": 22, "group": False},
+        {"name": "Volet 13", "id": 13, "pin_up": 25, "pin_down": 24, "group": False},
+        {"name": "Volet 14", "id": 14, "pin_up": 27, "pin_down": 26, "group": False},
+        {"name": "Volet 15", "id": 15, "pin_up": 29, "pin_down": 28, "group": False},
+        {"name": "Volet 16", "id": 16, "pin_up": 31, "pin_down": 30, "group": False},
     ]
 
     def __init__(self):
