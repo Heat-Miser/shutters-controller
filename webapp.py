@@ -1,15 +1,17 @@
 from flask import Flask
+from flask import render_template
+from flask_fontawesome import FontAwesome
 from shutter_i2c import ShuttersController
 
 app = Flask(__name__)
+fa = FontAwesome(app)
 
-
-shutter_controller = None
+shutter_controller = ShuttersController()
 
 
 @app.route('/')
 def index():
-    return "Hello world !"
+    return render_template('index.html', shutters=shutter_controller.shutters)
 
 
 @app.route('/api/shutter/<int:id>/up')
@@ -49,5 +51,7 @@ def shutter_all_up():
 
 
 if __name__ == "__main__":
+    print("Bob")
     shutter_controller = ShuttersController()
+    print(shutter_controller)
     app.run(host='0.0.0.0')

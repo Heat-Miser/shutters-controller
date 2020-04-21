@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    {{ fontawesome_html() }}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+
+    <title>Mes Volets</title>
+  </head>
+  <body>
+    <center><h2>Gestion des volets</h2></center>
+    <div class="container">
+        {% for shutter in shutters %}
+            {% if (loop.index - 1) % 4  == 0 %}
+                <div class="row">
+            {% endif %}
+            <div id="{{ shutter.id }}" class="col">{{ shutter.name }}
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success" aria-label="open"><span class="fas fa-chevron-up"></span></button>
+                    <button type="button" class="btn btn-danger" aria-label="close"><span class="fas fa-chevron-down" aria-hidden="true"></span></button>
+                </div>
+            </div>
+            {% if (loop.index - 1) % 4 == 3 %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/static/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/shutters.js"></script>
+  </body>
+</html>
